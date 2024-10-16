@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt5iq8ymlxq2q"]
+
+[ext_resource type="Script" path="res://scene/flowing_background.gd" id="1_co0tp"]
+[ext_resource type="Texture2D" uid="uid://deskk0j7xm37t" path="res://asset/background.png" id="1_kh2oc"]
+
+[node name="FlowingBackground" type="ParallaxBackground"]
+script = ExtResource("1_co0tp")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 1024)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+scale = Vector2(4, 4)
+texture = ExtResource("1_kh2oc")
+centered = false

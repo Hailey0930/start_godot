@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bla82c605yh4f"]
+
+[ext_resource type="PackedScene" uid="uid://bt5iq8ymlxq2q" path="res://scene/flowingBackground.tscn" id="1_d7c3x"]
+
+[node name="Game" type="Node2D"]
+
+[node name="FlowingBackground" parent="." instance=ExtResource("1_d7c3x")]
