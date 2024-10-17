@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bla82c605yh4f"]
+[gd_scene load_steps=3 format=3 uid="uid://bciqrqa676u0t"]
 
-[ext_resource type="PackedScene" uid="uid://bt5iq8ymlxq2q" path="res://scene/flowingBackground.tscn" id="1_d7c3x"]
+[ext_resource type="PackedScene" uid="uid://bt5iq8ymlxq2q" path="res://scene/flowingBackground.tscn" id="1_lkmvp"]
+[ext_resource type="PackedScene" uid="uid://c1bfyh7fylyuf" path="res://scene/car.tscn" id="2_pmbjt"]
 
 [node name="Game" type="Node2D"]
 
-[node name="FlowingBackground" parent="." instance=ExtResource("1_d7c3x")]
+[node name="FlowingBackground" parent="." instance=ExtResource("1_lkmvp")]
+
+[node name="Car" parent="." instance=ExtResource("2_pmbjt")]
+position = Vector2(609, 529)
