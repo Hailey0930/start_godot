@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bciqrqa676u0t"]
+[gd_scene load_steps=4 format=3 uid="uid://bciqrqa676u0t"]
 
 [ext_resource type="PackedScene" uid="uid://bt5iq8ymlxq2q" path="res://scene/flowingBackground.tscn" id="1_lkmvp"]
 [ext_resource type="PackedScene" uid="uid://c1bfyh7fylyuf" path="res://scene/car.tscn" id="2_pmbjt"]
+[ext_resource type="Script" path="res://script/making_cupcake.gd" id="3_jbtcv"]
 
 [node name="Game" type="Node2D"]
 
 [node name="FlowingBackground" parent="." instance=ExtResource("1_lkmvp")]
 
 [node name="Car" parent="." instance=ExtResource("2_pmbjt")]
-position = Vector2(609, 529)
+position = Vector2(478, 539)
+
+[node name="makingCupcake" type="Node" parent="."]
+script = ExtResource("3_jbtcv")
+
+[node name="Timer" type="Timer" parent="makingCupcake"]
+autostart = true
+
+[connection signal="timeout" from="makingCupcake/Timer" to="makingCupcake" method="_on_timer_timeout"]
