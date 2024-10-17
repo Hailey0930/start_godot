@@ -1,11 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://bciqrqa676u0t"]
+[gd_scene load_steps=7 format=3 uid="uid://bciqrqa676u0t"]
 
+[ext_resource type="Script" path="res://script/making_obstacle.gd" id="1_1odm7"]
 [ext_resource type="PackedScene" uid="uid://bt5iq8ymlxq2q" path="res://scene/flowingBackground.tscn" id="1_lkmvp"]
 [ext_resource type="PackedScene" uid="uid://c1bfyh7fylyuf" path="res://scene/car.tscn" id="2_pmbjt"]
 [ext_resource type="Script" path="res://script/making_cupcake.gd" id="3_jbtcv"]
 [ext_resource type="PackedScene" uid="uid://b1c4jk0xs8htr" path="res://scene/score.tscn" id="4_yeoyc"]
 
+[sub_resource type="GDScript" id="GDScript_y05a0"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.
+"
+
 [node name="Game" type="Node2D"]
+script = SubResource("GDScript_y05a0")
 
 [node name="FlowingBackground" parent="." instance=ExtResource("1_lkmvp")]
 
@@ -22,4 +42,11 @@ autostart = true
 
 [node name="Score" parent="CanvasLayer" instance=ExtResource("4_yeoyc")]
 
+[node name="makingObstacle" type="Node" parent="."]
+script = ExtResource("1_1odm7")
+
+[node name="Timer" type="Timer" parent="makingObstacle"]
+autostart = true
+
 [connection signal="timeout" from="makingCupcake/Timer" to="makingCupcake" method="_on_timer_timeout"]
+[connection signal="timeout" from="makingObstacle/Timer" to="makingObstacle" method="_on_timer_timeout"]
