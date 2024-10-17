@@ -1,7 +1,7 @@
 extends Area2D
 
 
-const 스크롤속도 = 200
+const 스크롤속도 = 400
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
